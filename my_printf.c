@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Mon Oct 19 18:55:46 2015 Baptiste veyssiere
-** Last update Tue Nov 10 11:27:32 2015 Baptiste veyssiere
+** Last update Tue Nov 10 15:14:18 2015 Baptiste veyssiere
 */
 
 #include <stdarg.h>
@@ -40,7 +40,8 @@ int	selector(va_list ap, const char *format, int *i, void (*fptr[])(va_list, con
   int	key;
   int	j;
   int	k;
-  char	flags[] = "hliducxXbosSp% ";
+  char	flags[] = "hliducxXbosSp%";
+
   j = 0;
   key = 0;
   if (format[*i] == '%')
@@ -51,15 +52,13 @@ int	selector(va_list ap, const char *format, int *i, void (*fptr[])(va_list, con
 	  k = 0;
 	  while (flags[k] != format[*i] && flags[k] != 0)
 	    k++;
-	  if (flags[k] != 0 && flags[k] != ' ')
+	  if (flags[k] != 0)
 	    {
 	      fptr[k](ap, format, i);
 	      *i += 1;
 	      key = 1;
 	    }
-	  else if (flags[k] == ' ')
-	    fptr[k](ap, format, i);
-	  if (flags[k] == 0 && format[*i] != '+' && format[*i] != '#')
+	  if (flags[k] == 0 && format[*i] != '+' && format[*i] != '#' && format[*i] != ' ')
 	    key = 1;
 	}
     }
@@ -83,7 +82,6 @@ void	pointer(va_list ap, const char *format, int *i)
       case_S,
       case_pointer,
       case_percent,
-      case_space,
       0,
     };
 

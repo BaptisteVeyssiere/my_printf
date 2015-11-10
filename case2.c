@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Sat Nov  7 20:59:57 2015 Baptiste veyssiere
-** Last update Mon Nov  9 17:18:36 2015 Baptiste veyssiere
+** Last update Tue Nov 10 15:20:58 2015 Baptiste veyssiere
 */
 
 #include <stdarg.h>
@@ -22,8 +22,7 @@ void    case_integer(va_list ap, const char *list, int *i)
 
   s = malloc(sizeof(s));
   my_strcpy(s, my_put_nbr(va_arg(ap, int)));
-  if (list[*i - 1] == '+' && s[0] != '-')
-    my_putchar('+');
+  space_and_add(*i, list, s);
   my_putstr(s);
   free (s);
 }
@@ -34,8 +33,7 @@ void    case_signed_short(va_list ap, const char *list, int *i)
 
   s = malloc(sizeof(s));
   my_strcpy(s, my_put_short(va_arg(ap, int)));
-  if (list[*i - 1] == '+' && s[0] != '-')
-    my_putchar('+');
+  space_and_add(*i, list, s);
   my_putstr(s);
   free (s);
 }
@@ -46,8 +44,7 @@ void    case_signed_long(va_list ap, const char *list, int *i)
 
   s = malloc(sizeof(s));
   my_strcpy(s, my_put_long(va_arg(ap, long)));
-  if (list[*i - 1] == '+' && s[0] != '-')
-    my_putchar('+');
+  space_and_add(*i, list, s);
   my_putstr(s);
   free (s);
 }

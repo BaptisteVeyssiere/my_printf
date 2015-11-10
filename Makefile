@@ -5,7 +5,7 @@
 ## Login   <VEYSSI_B@epitech.net>
 ## 
 ## Started on  Sat Nov  7 20:15:15 2015 Baptiste veyssiere
-## Last update Tue Nov 10 14:26:45 2015 Baptiste veyssiere
+## Last update Tue Nov 10 15:15:34 2015 Baptiste veyssiere
 ##
 
 NAME	= libmy.a
@@ -20,7 +20,7 @@ SRCS	= my_revstr.c \
 	case1.c \
 	case2.c \
 	case3.c \
-	case4.c \
+	space_and_add.c \
 	signed_unsigned.c \
 	my_put_nbr2.c \
 	my_printf.c
