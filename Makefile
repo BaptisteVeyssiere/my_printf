@@ -5,7 +5,7 @@
 ## Login   <VEYSSI_B@epitech.net>
 ## 
 ## Started on  Sat Nov  7 20:15:15 2015 Baptiste veyssiere
-## Last update Tue Nov 10 16:48:54 2015 Baptiste veyssiere
+## Last update Tue Nov 10 19:05:27 2015 Baptiste veyssiere
 ##
 
 NAME	= libmy.a
@@ -28,7 +28,7 @@ SRCS	= my_revstr.c \
 OBJS	= $(SRCS:.c=.o)
 
 $(NAME):
-	cc -c $(SRCS)
+	cc -c $(SRCS) -I./include
 	ar rc $(NAME) $(OBJS)
 
 all: $(NAME)
