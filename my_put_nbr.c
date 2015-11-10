@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Wed Sep 30 19:05:04 2015 Baptiste veyssiere
-** Last update Mon Nov  9 11:29:41 2015 Baptiste veyssiere
+** Last update Tue Nov 10 18:15:09 2015 Baptiste veyssiere
 */
 
 #include <stdlib.h>
@@ -97,15 +97,8 @@ char    *my_put_ulong(unsigned long nb)
 {
   char  *s;
   int   i;
-  int   key;
 
-  key = 0;
   s = malloc(12);
-  if (nb < 0)
-    {
-      key = 1;
-      nb *= -1;
-    }
   i = 0;
   while (nb > 0)
     {
@@ -113,8 +106,6 @@ char    *my_put_ulong(unsigned long nb)
       nb = nb - s[i - 1] + 48;
       nb /= 10;
     }
-  if (key == 1)
-    s[i++] = '-';
   s[i] = 0;
   my_revstr(s);
   s[i] = 0;
@@ -125,15 +116,8 @@ char    *my_put_ushort(unsigned short nb)
 {
   char  *s;
   int   i;
-  int   key;
 
-  key = 0;
   s = malloc(12);
-  if (nb < 0)
-    {
-      key = 1;
-      nb *= -1;
-    }
   i = 0;
   while (nb > 0)
     {
@@ -141,8 +125,6 @@ char    *my_put_ushort(unsigned short nb)
       nb = nb - s[i - 1] + 48;
       nb /= 10;
     }
-  if (key == 1)
-    s[i++] = '-';
   s[i] = 0;
   my_revstr(s);
   s[i] = 0;
