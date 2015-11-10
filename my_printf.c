@@ -1,0 +1,110 @@
+/*
+** my_printf.c for my_printf in /home/VEYSSI_B/rendu/test
+** 
+** Made by Baptiste veyssiere
+** Login   <VEYSSI_B@epitech.net>
+** 
+** Started on  Mon Oct 19 18:55:46 2015 Baptiste veyssiere
+** Last update Tue Nov 10 11:27:32 2015 Baptiste veyssiere
+*/
+
+#include <stdarg.h>
+#include <stdlib.h>
+#include "my.h"
+
+void    my_putstr2(unsigned char *s)
+{
+  int	i;
+  int	nbr;
+
+  i = 0;
+  while (s[i] != 0)
+    {
+      if (s[i] < 32)
+	{
+	  my_putchar(92);
+	  my_putchar('0');
+	  if (s[i] < 8)
+	    my_putchar('0');
+	  nbr = s[i];
+	  converter(nbr, "01234567");
+	  i++;
+	}
+      else
+	my_putchar(s[i++]);
+    }
+}
+
+int	selector(va_list ap, const char *format, int *i, void (*fptr[])(va_list, const char*, int*))
+{
+  int	key;
+  int	j;
+  int	k;
+  char	flags[] = "hliducxXbosSp% ";
+  j = 0;
+  key = 0;
+  if (format[*i] == '%')
+    {
+      while (key == 0)
+	{
+	  *i = *i + 1;
+	  k = 0;
+	  while (flags[k] != format[*i] && flags[k] != 0)
+	    k++;
+	  if (flags[k] != 0 && flags[k] != ' ')
+	    {
+	      fptr[k](ap, format, i);
+	      *i += 1;
+	      key = 1;
+	    }
+	  else if (flags[k] == ' ')
+	    fptr[k](ap, format, i);
+	  if (flags[k] == 0 && format[*i] != '+' && format[*i] != '#')
+	    key = 1;
+	}
+    }
+}
+
+void	pointer(va_list ap, const char *format, int *i)
+{
+  void	(*fptr[])(va_list, const char*, int*) =
+    {
+      case_short,
+      case_long,
+      case_integer,
+      case_integer,
+      case_unsigned,
+      case_char,
+      case_hexa,
+      case_hexa_maj,
+      case_bin,
+      case_octa,
+      case_string,
+      case_S,
+      case_pointer,
+      case_percent,
+      case_space,
+      0,
+    };
+
+  selector(ap, format, i, fptr);
+}
+
+int	my_printf(const char *format, ...)
+{
+  va_list	ap;
+  int		i;
+
+  va_start(ap, format);
+  i = 0;
+  while (format[i] != 0)
+    {
+      if (format[i] != '%')
+	{
+	  my_putchar(format[i]);
+	  i++;
+	}
+      pointer(ap, format, &i);
+    }
+  va_end(ap);
+}
