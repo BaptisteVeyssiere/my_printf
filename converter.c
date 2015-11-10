@@ -5,10 +5,10 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Tue Oct 27 12:24:55 2015 Baptiste veyssiere
-** Last update Mon Nov  9 11:13:01 2015 Baptiste veyssiere
+** Last update Tue Nov 10 16:42:54 2015 Baptiste veyssiere
 */
 
-void     converter(int nbr, char *base)
+void     converter(unsigned int nbr, char *base)
 {
   char	s[32];
   int	j;

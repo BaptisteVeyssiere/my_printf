@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Mon Oct 19 18:55:46 2015 Baptiste veyssiere
-** Last update Tue Nov 10 15:14:18 2015 Baptiste veyssiere
+** Last update Tue Nov 10 16:53:00 2015 Baptiste veyssiere
 */
 
 #include <stdarg.h>
@@ -35,7 +35,8 @@ void    my_putstr2(unsigned char *s)
     }
 }
 
-int	selector(va_list ap, const char *format, int *i, void (*fptr[])(va_list, const char*, int*))
+int	selector(va_list ap, const char *list, int *i, \
+		 void (*fptr[])(va_list, const char*, int*))
 {
   int	key;
   int	j;
@@ -44,21 +45,21 @@ int	selector(va_list ap, const char *format, int *i, void (*fptr[])(va_list, con
 
   j = 0;
   key = 0;
-  if (format[*i] == '%')
+  if (list[*i] == '%')
     {
       while (key == 0)
 	{
 	  *i = *i + 1;
 	  k = 0;
-	  while (flags[k] != format[*i] && flags[k] != 0)
+	  while (flags[k] != list[*i] && flags[k] != 0)
 	    k++;
 	  if (flags[k] != 0)
 	    {
-	      fptr[k](ap, format, i);
+	      fptr[k](ap, list, i);
 	      *i += 1;
 	      key = 1;
 	    }
-	  if (flags[k] == 0 && format[*i] != '+' && format[*i] != '#' && format[*i] != ' ')
+	  if (flags[k] == 0 && list[*i] != '+' && list[*i] != '#' && list[*i] != ' ')
 	    key = 1;
 	}
     }

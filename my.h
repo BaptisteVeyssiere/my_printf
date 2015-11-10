@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Sat Nov  7 21:03:49 2015 Baptiste veyssiere
-** Last update Tue Nov 10 15:14:45 2015 Baptiste veyssiere
+** Last update Tue Nov 10 16:49:09 2015 Baptiste veyssiere
 */
 
 #ifndef MY_H_
@@ -32,6 +32,6 @@ void    case_unsigned_short(va_list, const char*, int*);
 void    case_unsigned_long(va_list, const char*, int*);
 void	case_pointer(va_list, const char*, int*);
 void	case_percent(va_list, const char*, int*);
-void	space_and_add(va_list, const char*, char*);
+void	space_and_add(int, const char*, char*);
 
 #endif /* MY_H_ */

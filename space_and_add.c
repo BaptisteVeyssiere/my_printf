@@ -5,8 +5,10 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Tue Nov 10 15:00:09 2015 Baptiste veyssiere
-** Last update Tue Nov 10 15:20:24 2015 Baptiste veyssiere
+** Last update Tue Nov 10 16:47:47 2015 Baptiste veyssiere
 */
+
+#include <stdlib.h>
 
 void	space_and_add(int i, const char *list, char *s)
 {

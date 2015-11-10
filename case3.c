@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Sun Nov  8 21:35:27 2015 Baptiste veyssiere
-** Last update Tue Nov 10 10:56:03 2015 Baptiste veyssiere
+** Last update Tue Nov 10 16:50:32 2015 Baptiste veyssiere
 */
 
 #include <stdarg.h>
@@ -35,7 +35,7 @@ void    case_hexa_maj(va_list ap, const char *list, int *i)
 {
   if (list[*i - 1] == '#')
     my_putstr("0X");
-  converter(va_arg(ap, int), "0123456789ABCDEF");
+  converter(va_arg(ap, unsigned int), "0123456789ABCDEF");
 }
 
 void    case_pointer(va_list ap, const char *list, int *i)
