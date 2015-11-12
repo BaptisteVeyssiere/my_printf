@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Mon Oct 19 18:55:46 2015 Baptiste veyssiere
-** Last update Thu Nov 12 10:20:55 2015 Baptiste veyssiere
+** Last update Thu Nov 12 18:26:59 2015 Baptiste veyssiere
 */
 
 #include <stdarg.h>
@@ -95,7 +95,7 @@ void	pointer(va_list ap, const char *format, int *i)
   selector(ap, format, i, fptr);
 }
 
-void	my_printf(const char *format, ...)
+int	my_printf(const char *format, ...)
 {
   va_list	ap;
   int		i;
@@ -112,4 +112,5 @@ void	my_printf(const char *format, ...)
       pointer(ap, format, &i);
     }
   va_end(ap);
+  return (0);
 }
