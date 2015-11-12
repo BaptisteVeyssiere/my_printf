@@ -5,10 +5,11 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Sat Nov  7 21:01:13 2015 Baptiste veyssiere
-** Last update Sat Nov  7 21:01:34 2015 Baptiste veyssiere
+** Last update Thu Nov 12 18:49:30 2015 Baptiste veyssiere
 */
 
-void	my_putchar(char c)
+void	my_putchar(char c, int *length)
 {
   write(1, &c, 1);
+  *length += 1;
 }

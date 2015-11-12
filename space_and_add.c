@@ -5,10 +5,10 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Tue Nov 10 15:00:09 2015 Baptiste veyssiere
-** Last update Tue Nov 10 18:07:27 2015 Baptiste veyssiere
+** Last update Thu Nov 12 18:54:13 2015 Baptiste veyssiere
 */
 
-void	space_and_add(int i, const char *list, char *s)
+void	space_and_add(int i, const char *list, char *s, int *length)
 {
   i -= 1;
   if (s[0] != '-')
@@ -16,8 +16,8 @@ void	space_and_add(int i, const char *list, char *s)
       while (list[i] == ' ')
 	i--;
       if (list[i] == '+')
-	my_putchar('+');
+	my_putchar('+', length);
       else if (list[i + 1] == ' ')
-	my_putchar(' ');
+	my_putchar(' ', length);
     }
 }

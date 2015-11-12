@@ -5,14 +5,14 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Mon Oct 19 18:55:46 2015 Baptiste veyssiere
-** Last update Thu Nov 12 18:26:59 2015 Baptiste veyssiere
+** Last update Thu Nov 12 18:54:37 2015 Baptiste veyssiere
 */
 
 #include <stdarg.h>
 #include <stdlib.h>
 #include "my.h"
 
-void    my_putstr2(unsigned char *s)
+void    my_putstr2(unsigned char *s, int *length)
 {
   int	i;
   int	nbr;
@@ -22,34 +22,34 @@ void    my_putstr2(unsigned char *s)
     {
       if (s[i] < 32)
 	{
-	  my_putchar(92);
-	  my_putchar('0');
+	  my_putchar(92, length);
+	  my_putchar('0', length);
 	  if (s[i] < 8)
-	    my_putchar('0');
+	    my_putchar('0', length);
 	  nbr = s[i];
-	  converter(nbr, "01234567");
+	  converter(nbr, "01234567", length);
 	  i++;
 	}
       else
-	my_putchar(s[i++]);
+	my_putchar(s[i++], length);
     }
 }
 
-void	no_flags(int *key)
+void	no_flags(int *key, int *length)
 {
   *key = 1;
-  my_putchar('%');
+  my_putchar('%', length);
 }
 
-void	selector(va_list ap, const char *list, int *i, \
-		 void (*fptr[])(va_list, const char*, int*))
+int	selector(va_list ap, const char *list, int *i, \
+		 void (*fptr[])(va_list, const char*, int*, int*))
 {
   int	key;
-  int	j;
+  int	length;
   int	k;
   char	flags[] = "hliducxXbosSp%";
 
-  j = 0;
+  length = 0;
   key = 0;
   if (list[*i] == '%')
     {
@@ -61,19 +61,20 @@ void	selector(va_list ap, const char *list, int *i, \
 	    k++;
 	  if (flags[k] != 0)
 	    {
-	      fptr[k](ap, list, i);
-	      *i += 1;
+	      fptr[k](ap, list, i, &length);
 	      key = 1;
 	    }
 	  if (flags[k] == 0 && list[*i] != '+' && list[*i] != '#' && list[*i] != ' ')
-	    no_flags(&key);
+	    no_flags(&key, &length);
 	}
     }
+  return (length);
 }
 
-void	pointer(va_list ap, const char *format, int *i)
+int	pointer(va_list ap, const char *format, int *i)
 {
-  void	(*fptr[])(va_list, const char*, int*) =
+  int	length;
+  void	(*fptr[])(va_list, const char*, int*, int*) =
     {
       case_short,
       case_long,
@@ -92,25 +93,29 @@ void	pointer(va_list ap, const char *format, int *i)
       0,
     };
 
-  selector(ap, format, i, fptr);
+  length = 0;
+  length = selector(ap, format, i, fptr);
+  return (length);
 }
 
 int	my_printf(const char *format, ...)
 {
   va_list	ap;
   int		i;
+  int		length;
 
+  length = 0;
   va_start(ap, format);
   i = 0;
   while (format[i] != 0)
     {
       if (format[i] != '%')
 	{
-	  my_putchar(format[i]);
+	  my_putchar(format[i], &length);
 	  i++;
 	}
-      pointer(ap, format, &i);
+      length += pointer(ap, format, &i);
     }
   va_end(ap);
-  return (0);
+  return (length);
 }

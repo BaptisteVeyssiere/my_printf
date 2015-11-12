@@ -5,36 +5,41 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Sat Nov  7 20:57:15 2015 Baptiste veyssiere
-** Last update Tue Nov 10 16:44:12 2015 Baptiste veyssiere
+** Last update Thu Nov 12 18:45:11 2015 Baptiste veyssiere
 */
 
 #include <stdarg.h>
 
-void    case_hexa(va_list ap, const char *list, int *i)
+void    case_hexa(va_list ap, const char *list, int *i, int *length)
 {
   if (list[*i - 1] == '#')
-    my_putstr("0x");
-  converter(va_arg(ap, unsigned int), "0123456789abcdef");
+    my_putstr("0x", length);
+  converter(va_arg(ap, unsigned int), "0123456789abcdef", length);
+  *i +=1;
 }
 
-void    case_char(va_list ap, const char *list, int *i)
+void    case_char(va_list ap, const char *list, int *i, int *length)
 {
-  my_putchar(va_arg(ap, int));
+  my_putchar(va_arg(ap, int), length);
+  *i +=1;
 }
 
-void    case_bin(va_list ap, const char *list, int *i)
+void    case_bin(va_list ap, const char *list, int *i, int *length)
 {
-  converter(va_arg(ap, unsigned int), "01");
+  converter(va_arg(ap, unsigned int), "01", length);
+  *i +=1;
 }
 
-void    case_S(va_list ap, const char *list, int *i)
+void    case_S(va_list ap, const char *list, int *i, int *length)
 {
-  my_putstr2(va_arg(ap, unsigned char *));
+  my_putstr2(va_arg(ap, unsigned char *), length);
+  *i +=1;
 }
 
-void    case_octa(va_list ap, const char *list, int *i)
+void    case_octa(va_list ap, const char *list, int *i, int *length)
 {
   if (list[*i - 1] == '#')
-    my_putchar('0');
-  converter(va_arg(ap, unsigned int), "01234567");
+    my_putchar('0', length);
+  converter(va_arg(ap, unsigned int), "01234567", length);
+  *i +=1;
 }
