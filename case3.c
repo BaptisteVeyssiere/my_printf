@@ -5,30 +5,29 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Sun Nov  8 21:35:27 2015 Baptiste veyssiere
-** Last update Tue Nov 10 16:50:32 2015 Baptiste veyssiere
+** Last update Thu Nov 12 16:47:44 2015 Baptiste veyssiere
 */
 
 #include <stdarg.h>
 #include <stdlib.h>
+#include "my.h"
 
 void    case_unsigned_short(va_list ap, const char *list, int *i)
 {
   char  *s;
 
-  s = malloc(sizeof(s));
-  my_strcpy(s, my_put_ushort(va_arg(ap, int)));
+  s = my_put_ushort(va_arg(ap, int));
   my_putstr(s);
-  free (s);
+  free(s);
 }
 
 void    case_unsigned_long(va_list ap, const char *list, int *i)
 {
   char  *s;
 
-  s = malloc(sizeof(s));
-  my_strcpy(s, my_put_ulong(va_arg(ap, unsigned long)));
+  s = my_put_ulong(va_arg(ap, unsigned long));
   my_putstr(s);
-  free (s);
+  free(s);
 }
 
 void    case_hexa_maj(va_list ap, const char *list, int *i)
