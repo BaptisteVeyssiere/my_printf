@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Mon Oct 19 18:55:46 2015 Baptiste veyssiere
-** Last update Tue Nov 10 16:53:00 2015 Baptiste veyssiere
+** Last update Thu Nov 12 10:20:55 2015 Baptiste veyssiere
 */
 
 #include <stdarg.h>
@@ -35,7 +35,13 @@ void    my_putstr2(unsigned char *s)
     }
 }
 
-int	selector(va_list ap, const char *list, int *i, \
+void	no_flags(int *key)
+{
+  *key = 1;
+  my_putchar('%');
+}
+
+void	selector(va_list ap, const char *list, int *i, \
 		 void (*fptr[])(va_list, const char*, int*))
 {
   int	key;
@@ -60,7 +66,7 @@ int	selector(va_list ap, const char *list, int *i, \
 	      key = 1;
 	    }
 	  if (flags[k] == 0 && list[*i] != '+' && list[*i] != '#' && list[*i] != ' ')
-	    key = 1;
+	    no_flags(&key);
 	}
     }
 }
@@ -89,7 +95,7 @@ void	pointer(va_list ap, const char *format, int *i)
   selector(ap, format, i, fptr);
 }
 
-int	my_printf(const char *format, ...)
+void	my_printf(const char *format, ...)
 {
   va_list	ap;
   int		i;
