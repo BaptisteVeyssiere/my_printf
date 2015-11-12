@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Sun Nov  8 21:43:26 2015 Baptiste veyssiere
-** Last update Thu Nov 12 16:35:20 2015 Baptiste veyssiere
+** Last update Thu Nov 12 18:05:49 2015 Baptiste veyssiere
 */
 
 #include <stdlib.h>
@@ -27,4 +27,37 @@ char    *my_put_unsigned(unsigned int nb)
   my_revstr(s);
   s[i] = 0;
   return (s);
+}
+
+int	loop_i(int *nb, char *s, int *i)
+{
+  if (*nb <= 0)
+    return (0);
+  s[*i] = (*nb % 10) + 48;
+  *i += 1;
+  *nb = *nb - s[*i - 1] + 48;
+  *nb /= 10;
+  loop_i(nb, s, i);
+}
+
+int     loop_l(long *nb, char *s, int *i)
+{
+  if (*nb <= 0)
+    return (0);
+  s[*i] = (*nb % 10) + 48;
+  *i += 1;
+  *nb = *nb - s[*i - 1] + 48;
+  *nb /= 10;
+  loop_l(nb, s, i);
+}
+
+int     loop_s(short *nb, char *s, int *i)
+{
+  if (*nb <= 0)
+    return (0);
+  s[*i] = (*nb % 10) + 48;
+  *i += 1;
+  *nb = *nb - s[*i - 1] + 48;
+  *nb /= 10;
+  loop_s(nb, s, i);
 }

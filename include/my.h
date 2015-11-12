@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Sat Nov  7 21:03:49 2015 Baptiste veyssiere
-** Last update Thu Nov 12 16:43:45 2015 Baptiste veyssiere
+** Last update Thu Nov 12 18:04:52 2015 Baptiste veyssiere
 */
 
 #ifndef MY_H_
@@ -40,5 +40,8 @@ char	*my_put_long(long);
 char	*my_put_unsigned(unsigned int);
 char	*my_put_ushort(unsigned short);
 char	*my_put_ulong(unsigned long);
+int     loop_i(int*, char*, int*);
+int     loop_s(short*, char*, int*);
+int     loop_l(long*, char*, int*);
 
 #endif /* MY_H_ */
