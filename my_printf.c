@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Mon Oct 19 18:55:46 2015 Baptiste veyssiere
-** Last update Thu Nov 12 18:54:37 2015 Baptiste veyssiere
+** Last update Sat Nov 14 21:16:48 2015 Baptiste veyssiere
 */
 
 #include <stdarg.h>
@@ -35,10 +35,19 @@ void    my_putstr2(unsigned char *s, int *length)
     }
 }
 
-void	no_flags(int *key, int *length)
+void	no_flags(int *key, int *length, char flags, char list)
 {
-  *key = 1;
-  my_putchar('%', length);
+  char	format[] = "+# 0123456789-";
+  int	i;
+
+  i = 0;
+  while (format[i] != 0 && format[i] != list)
+    i++;
+  if (flags == 0 && format[i] == 0)
+    {
+      *key = 1;
+      my_putchar('%', length);
+    }
 }
 
 int	selector(va_list ap, const char *list, int *i, \
@@ -64,8 +73,7 @@ int	selector(va_list ap, const char *list, int *i, \
 	      fptr[k](ap, list, i, &length);
 	      key = 1;
 	    }
-	  if (flags[k] == 0 && list[*i] != '+' && list[*i] != '#' && list[*i] != ' ')
-	    no_flags(&key, &length);
+	  no_flags(&key, &length, flags[k], list[*i]);
 	}
     }
   return (length);

@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Wed Sep 30 19:05:04 2015 Baptiste veyssiere
-** Last update Thu Nov 12 18:14:40 2015 Baptiste veyssiere
+** Last update Sat Nov 14 21:06:15 2015 Baptiste veyssiere
 */
 
 #include <stdlib.h>
@@ -75,22 +75,15 @@ char    *my_put_long(long nb)
 
   key = 0;
   s = malloc(12);
-  if (nb < 0 && nb > -9223372036854775808)
+  if (nb < 0)
     {
       key = 1;
       nb *= -1;
-    }
-  if (nb == -9223372036854775808)
-    {
-      key = 2;
-      nb = -1 * (nb + 1);
     }
   i = 0;
   loop_l(&nb, s, &i);
   if (key > 0)
     s[i++] = '-';
-  if (key == 2)
-    s[0] += 1;
   my_revstr(s);
   s[i] = 0;
   return (s);
