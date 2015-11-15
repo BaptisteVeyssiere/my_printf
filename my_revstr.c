@@ -5,14 +5,14 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Mon Oct  5 11:43:03 2015 Baptiste veyssiere
-** Last update Mon Oct  5 11:55:54 2015 Baptiste veyssiere
+** Last update Sun Nov 15 21:19:22 2015 Baptiste veyssiere
 */
 
 char	*my_revstr(char *str)
 {
   int	i;
   int	j;
-  char	swap[60];
+  char	swap[33];
 
   i = 0;
   j = 0;

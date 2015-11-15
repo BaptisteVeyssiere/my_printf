@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Wed Sep 30 19:05:04 2015 Baptiste veyssiere
-** Last update Sat Nov 14 21:06:15 2015 Baptiste veyssiere
+** Last update Sun Nov 15 21:11:02 2015 Baptiste veyssiere
 */
 
 #include <stdlib.h>
@@ -74,7 +74,7 @@ char    *my_put_long(long nb)
   int   key;
 
   key = 0;
-  s = malloc(12);
+  s = malloc(21);
   if (nb < 0)
     {
       key = 1;
@@ -94,7 +94,7 @@ char    *my_put_ulong(unsigned long nb)
   char  *s;
   int   i;
 
-  s = malloc(12);
+  s = malloc(21);
   i = 0;
   while (nb > 0)
     {
@@ -113,7 +113,7 @@ char    *my_put_ushort(unsigned short nb)
   char  *s;
   int   i;
 
-  s = malloc(12);
+  s = malloc(6);
   i = 0;
   while (nb > 0)
     {

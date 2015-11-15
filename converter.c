@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Tue Oct 27 12:24:55 2015 Baptiste veyssiere
-** Last update Sun Nov 15 19:59:06 2015 Baptiste veyssiere
+** Last update Sun Nov 15 20:53:31 2015 Baptiste veyssiere
 */
 
 void     converter(unsigned int nbr, char *base, int *length)

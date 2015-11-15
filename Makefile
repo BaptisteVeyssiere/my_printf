@@ -5,7 +5,7 @@
 ## Login   <VEYSSI_B@epitech.net>
 ## 
 ## Started on  Sat Nov  7 20:15:15 2015 Baptiste veyssiere
-## Last update Tue Nov 10 19:05:27 2015 Baptiste veyssiere
+## Last update Sun Nov 15 20:32:51 2015 Baptiste veyssiere
 ##
 
 NAME	= libmy.a
@@ -13,7 +13,6 @@ NAME	= libmy.a
 SRCS	= my_revstr.c \
 	converter.c \
 	my_put_nbr.c \
-	my_strcpy.c \
 	my_strlen.c \
 	my_putchar.c \
 	my_putstr.c \

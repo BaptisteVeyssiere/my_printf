@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Sun Nov  8 21:35:27 2015 Baptiste veyssiere
-** Last update Thu Nov 12 18:47:51 2015 Baptiste veyssiere
+** Last update Sun Nov 15 21:07:51 2015 Baptiste veyssiere
 */
 
 #include <stdarg.h>
@@ -35,7 +35,7 @@ void    case_unsigned_long(va_list ap, const char *list, int *i, int *length)
   else
     my_putstr(s, length);
   free(s);
-  *i +=1;
+  *i += 1;
 }
 
 void    case_hexa_maj(va_list ap, const char *list, int *i, int *length)
@@ -43,17 +43,17 @@ void    case_hexa_maj(va_list ap, const char *list, int *i, int *length)
   if (list[*i - 1] == '#')
     my_putstr("0X", length);
   converter(va_arg(ap, unsigned int), "0123456789ABCDEF", length);
-  *i +=1;
+  *i += 1;
 }
 
 void    case_pointer(va_list ap, const char *list, int *i, int *length)
 {
   unsigned long	ptr;
-  char		*base;
-  char		*s;
-  int		j;
- 
-  s = malloc(sizeof(s));
+  char	*base;
+  char	*s;
+  int	j;
+
+  s = malloc(22);
   ptr = va_arg(ap, unsigned long);
   base = "0123456789abcdef";
   j = 0;
@@ -68,11 +68,11 @@ void    case_pointer(va_list ap, const char *list, int *i, int *length)
   j = 0;
   my_putstr(my_revstr(s), length);
   free(s);
-  *i +=1;
+  *i += 1;
 }
 
 void	case_percent(va_list ap, const char *list, int *i, int *length)
 {
   my_putchar('%', length);
-  *i +=1;
+  *i += 1;
 }

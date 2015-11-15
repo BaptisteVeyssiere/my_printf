@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Sat Nov  7 21:01:13 2015 Baptiste veyssiere
-** Last update Thu Nov 12 18:49:30 2015 Baptiste veyssiere
+** Last update Sun Nov 15 20:59:13 2015 Baptiste veyssiere
 */
 
 void	my_putchar(char c, int *length)

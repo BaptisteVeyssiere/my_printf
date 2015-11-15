@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Sat Nov  7 20:59:57 2015 Baptiste veyssiere
-** Last update Thu Nov 12 18:46:54 2015 Baptiste veyssiere
+** Last update Sun Nov 15 20:45:44 2015 Baptiste veyssiere
 */
 
 #include <stdarg.h>
@@ -15,7 +15,7 @@
 void    case_string(va_list ap, const char *list, int *i, int *length)
 {
   my_putstr(va_arg(ap, char *), length);
-  *i +=1;
+  *i += 1;
 }
 
 void    case_integer(va_list ap, const char *list, int *i, int *length)
@@ -29,7 +29,7 @@ void    case_integer(va_list ap, const char *list, int *i, int *length)
   else
     my_putstr(s, length);
   free(s);
-  *i +=1;
+  *i += 1;
 }
 
 void    case_signed_short(va_list ap, const char *list, int *i, int *length)
@@ -43,7 +43,7 @@ void    case_signed_short(va_list ap, const char *list, int *i, int *length)
   else
     my_putstr(s, length);
   free(s);
-  *i +=1;
+  *i += 1;
 }
 
 void    case_signed_long(va_list ap, const char *list, int *i, int *length)
@@ -57,7 +57,7 @@ void    case_signed_long(va_list ap, const char *list, int *i, int *length)
   else
     my_putstr(s, length);
   free(s);
-  *i +=1;
+  *i += 1;
 }
 
 void    case_unsigned(va_list ap, const char *list, int *i, int *length)
@@ -70,5 +70,5 @@ void    case_unsigned(va_list ap, const char *list, int *i, int *length)
   else
     my_putstr(s, length);
   free(s);
-  *i +=1;
+  *i += 1;
 }

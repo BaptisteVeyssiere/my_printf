@@ -5,11 +5,10 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Mon Oct 19 18:55:46 2015 Baptiste veyssiere
-** Last update Sat Nov 14 21:16:48 2015 Baptiste veyssiere
+** Last update Sun Nov 15 21:08:45 2015 Baptiste veyssiere
 */
 
 #include <stdarg.h>
-#include <stdlib.h>
 #include "my.h"
 
 void    my_putstr2(unsigned char *s, int *length)
@@ -95,7 +94,7 @@ int	pointer(va_list ap, const char *format, int *i)
       case_bin,
       case_octa,
       case_string,
-      case_S,
+      case_str_octa,
       case_pointer,
       case_percent,
       0,
@@ -109,8 +108,8 @@ int	pointer(va_list ap, const char *format, int *i)
 int	my_printf(const char *format, ...)
 {
   va_list	ap;
-  int		i;
-  int		length;
+  int	i;
+  int	length;
 
   length = 0;
   va_start(ap, format);

@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Sun Nov  8 21:43:26 2015 Baptiste veyssiere
-** Last update Thu Nov 12 18:05:49 2015 Baptiste veyssiere
+** Last update Sun Nov 15 21:11:26 2015 Baptiste veyssiere
 */
 
 #include <stdlib.h>
@@ -15,7 +15,7 @@ char    *my_put_unsigned(unsigned int nb)
   char  *s;
   int   i;
 
-  s = malloc(12);
+  s = malloc(11);
   i = 0;
   while (nb > 0)
     {
