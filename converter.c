@@ -5,10 +5,10 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Tue Oct 27 12:24:55 2015 Baptiste veyssiere
-** Last update Tue Nov 10 16:42:54 2015 Baptiste veyssiere
+** Last update Sun Nov 15 19:59:06 2015 Baptiste veyssiere
 */
 
-void     converter(unsigned int nbr, char *base)
+void     converter(unsigned int nbr, char *base, int *length)
 {
   char	s[32];
   int	j;
@@ -22,5 +22,5 @@ void     converter(unsigned int nbr, char *base)
     }
   s[j] = 0;
   my_revstr(s);
-  my_putstr(s);
+  my_putstr(s, length);
 }

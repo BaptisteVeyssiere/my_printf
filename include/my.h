@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Sat Nov  7 21:03:49 2015 Baptiste veyssiere
-** Last update Sat Nov 14 21:17:11 2015 Baptiste veyssiere
+** Last update Sun Nov 15 19:59:34 2015 Baptiste veyssiere
 */
 
 #ifndef MY_H_
@@ -17,7 +17,7 @@ void	no_flags(int*, int*, char, char);
 int	my_printf(const char*, ...);
 void    case_short(va_list, const char*, int*, int*);
 void    case_long(va_list, const char*, int*, int*);
-void	converter(int, char*, int*);
+void	converter(unsigned int, char*, int*);
 void	case_hexa(va_list, const char*, int*, int*);
 void	case_hexa_maj(va_list, const char*, int*, int*);
 void	case_integer(va_list,const char*, int*, int*);
