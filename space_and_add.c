@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Tue Nov 10 15:00:09 2015 Baptiste veyssiere
-** Last update Sun Nov 15 21:05:40 2015 Baptiste veyssiere
+** Last update Mon Nov 16 19:52:45 2015 Baptiste veyssiere
 */
 
 void	space_and_add(int i, const char *list, char *s, int *length)

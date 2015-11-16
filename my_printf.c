@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Mon Oct 19 18:55:46 2015 Baptiste veyssiere
-** Last update Sun Nov 15 21:08:45 2015 Baptiste veyssiere
+** Last update Mon Nov 16 21:16:00 2015 Baptiste veyssiere
 */
 
 #include <stdarg.h>
@@ -19,10 +19,11 @@ void    my_putstr2(unsigned char *s, int *length)
   i = 0;
   while (s[i] != 0)
     {
-      if (s[i] < 32)
+      if (s[i] < 32 || s[i] >= 127)
 	{
 	  my_putchar(92, length);
-	  my_putchar('0', length);
+	  if (s[i] < 127)
+	    my_putchar('0', length);
 	  if (s[i] < 8)
 	    my_putchar('0', length);
 	  nbr = s[i];
