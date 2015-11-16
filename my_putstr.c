@@ -5,7 +5,7 @@
 ** Login   <VEYSSI_B@epitech.net>
 ** 
 ** Started on  Sat Nov  7 21:01:49 2015 Baptiste veyssiere
-** Last update Mon Nov 16 11:18:00 2015 Baptiste veyssiere
+** Last update Mon Nov 16 11:25:18 2015 Baptiste veyssiere
 */
 
 void	my_putstr(char *s, int *length)
@@ -13,4 +13,6 @@ void	my_putstr(char *s, int *length)
   if (s != 0)
     while (*s != 0)
       my_putchar(*s++, length);
+  else
+    my_putstr("(null)",length);
 }
